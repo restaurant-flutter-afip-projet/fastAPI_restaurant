@@ -1,14 +1,17 @@
-from pydantic import BaseModel, constr,confloat
+from pydantic import BaseModel
 
 class Dish(BaseModel):
     id: int
-    name: constr(min_length=1, max_length=100)
-    description: constr(min_length=1, max_length=300)
-    price: confloat(ge=0.0,le=1000.0)
-    img_url: constr(min_length=1, max_length=300)
-    category: constr(min_length=1, max_length=100)
+    name: str
+    description: str
+    price: float
+    img_url: str
+    category: str
+
+class DishOut(Dish):
+    id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 

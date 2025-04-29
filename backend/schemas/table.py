@@ -2,7 +2,10 @@ from pydantic import BaseModel, conint
 
 class Table(BaseModel):
     id: int
-    capacity: conint(ge=1, le=99)
+    capacity: int
+
+class TableOut(Table):
+    id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True

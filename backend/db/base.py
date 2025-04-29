@@ -1,3 +1,6 @@
-from sqlalchemy.orm import declarative_base
+from backend.db.base_class import Base
 
-Base = declarative_base()
+from backend.models.user import User
+from backend.models.menu import Dish
+from backend.models.table import Table
+from backend.models.reservation import Reservation

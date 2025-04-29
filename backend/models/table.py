@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer
-from backend.db.base import Base
+from backend.db.base_class import Base
 
 class Table(Base):
     __tablename__ = "tables"

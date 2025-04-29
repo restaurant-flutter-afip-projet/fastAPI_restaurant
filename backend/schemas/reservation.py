@@ -4,10 +4,13 @@ from datetime import datetime
 
 class Reservation(BaseModel):
     id : int
-    userId : int
-    tableId : int
+    user_id : int
+    table_id : int
     datetime: datetime
-    peopleNbr: conint(ge=0,le=100)
+    peopleNbr: int
+
+class ReservationOut(Reservation):
+    id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
