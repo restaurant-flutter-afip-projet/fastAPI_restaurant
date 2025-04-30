@@ -1,0 +1,24 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+r-venv/
+../r-venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+.shelf/
+workspace.xml
+
+# Logs, local files
+*.log
+.env
+*.env
+*.local
