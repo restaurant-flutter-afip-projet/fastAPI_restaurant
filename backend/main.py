@@ -5,14 +5,14 @@ from backend.api.endpoints.reservation import router_reservation
 from backend.api.endpoints.menu import router_menu
 from backend.api.endpoints.table import router_table
 
-fastAPI_restaurant = FastAPI(title="Restaurant API")
+app = FastAPI(title="Restaurant API")
 
-fastAPI_restaurant.include_router(router_menu, prefix="/api/menu", tags=["Menu"])
-fastAPI_restaurant.include_router(router_reservation, prefix="/api/reservation", tags=["Reservations"])
-fastAPI_restaurant.include_router(router_table, prefix="/api/table", tags=["Tables"])
+app.include_router(router_menu, prefix="/api/menu", tags=["Menu"])
+app.include_router(router_reservation, prefix="/api/reservation", tags=["Reservations"])
+app.include_router(router_table, prefix="/api/table", tags=["Tables"])
 
 
-fastAPI_restaurant.add_middleware(
+app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
